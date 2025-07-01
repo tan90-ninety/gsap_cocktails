@@ -4,7 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/gsap_cocktails',
-  publicDir: '/gsap_cocktails',
+  base: '/gsap_cocktails/',
   plugins: [react(),tailwindcss()],
 })

@@ -62,8 +62,8 @@ export default function Hero() {
         <>
             <section id="hero" className="noisy">
                 <h1 className="title">MOJITO</h1>
-                <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf" />
-                <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf" />
+                <img src={new URL("/images/hero-left-leaf.png", import.meta.url).href} alt="left-leaf" className="left-leaf" />
+                <img src={new URL("/images/hero-right-leaf.png", import.meta.url).href} alt="right-leaf" className="right-leaf" />
                 <div className="body">
                     <div className="content">
                         <div className="space-y-5 hidden md:block">
@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="video absolute inset-0">
                 <video
                     ref={videoRef}
-                    src="/videos/output.mp4"
+                    src={new URL("/videos/output.mp4", import.meta.url).href}
                     muted
                     playsInline
                     preload="auto"
