@@ -17,9 +17,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 9.5.0
+      - name: pnpm install
+        uses: pnpm/action-setup@v4
+        
+      - name: Setup pnpm config
+        run: pnpm config set store-dir "$PNPM_CACHE_FOLDER"
+        # Makes sure the pnpm store path exists (which is exactly what setup-node cares about)
+      - name: Verify PNPM Cache Directory
+        run: |
+          PNPM_STORE_PATH="$( pnpm store path --silent )"
+          if [ ! -d "$PNPM_STORE_PATH" ]; then
+            echo "PNPM store directory does not exist, creating it."
+            mkdir -p "$PNPM_STORE_PATH"
+          else
+            echo "PNPM store directory exists."
+          fi
     
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -30,11 +42,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build project
-        run: pnpm run build       # 运行 vite build
+      - name: Install dependencies and Build project
+        run:  pnpm install --frozen-lockfile && pnpm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
