@@ -48,8 +48,17 @@ jobs:
       - name: Install dependencies and Build project
         run:  pnpm install --frozen-lockfile && pnpm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./dist     # 构建输出目录，默认是 dist
+          # 上传 dist 文件夹
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.TOKEN }}
+      #     publish_dir: ./dist     # 构建输出目录，默认是 dist
