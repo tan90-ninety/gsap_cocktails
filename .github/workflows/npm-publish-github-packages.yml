@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment: gsap_cocktails
     concurrency:
       group: deploy
       cancel-in-progress: true
@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.x'  # 根据你的项目需求选择合适的 Node.js 版本
-          cache: pnpm           # 缓存 pnpm 安装的依赖
+          # cache: pnpm           # 缓存 pnpm 安装的依赖
 
       - name: Install pnpm
         run: npm install -g pnpm
