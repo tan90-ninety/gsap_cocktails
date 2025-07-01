@@ -19,6 +19,9 @@ jobs:
 
       - name: pnpm install
         uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
         
       - name: Setup pnpm config
         run: pnpm config set store-dir "$PNPM_CACHE_FOLDER"
