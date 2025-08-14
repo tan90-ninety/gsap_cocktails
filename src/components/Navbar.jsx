@@ -26,14 +26,14 @@ export default function Navbar() {
                     <img src={new URL("/images/logo.png", import.meta.url).href} alt="logo" />
                     <p>Velvet Pour</p>
                 </a>
+                <ul>
+                    {navLinks.map(link => (
+                        <li key={link.id}>
+                            <a href={`#${link.id}`}>{link.title}</a>
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <ul>
-                {navLinks.map(link => (
-                    <li key={link.id}>
-                        <a href={`#${link.id}`}>{link.title}</a>
-                    </li>
-                ))}
-            </ul>
         </nav>
     )
 }
