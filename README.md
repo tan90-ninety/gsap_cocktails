@@ -1,12 +1,31 @@
-# React + Vite
+# 🍸 MOJITO 鸡尾酒吧网站
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个使用 React、GSAP 和 Tailwind CSS 构建的现代化鸡尾酒吧网站，具有流畅的动画效果和响应式设计。
 
-Currently, two official plugins are available:
+## ✨ 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **响应式设计** - 适配各种屏幕尺寸
+2. **丰富动画效果** - 使用 GSAP 实现文本动画、滚动触发动画
+3. **视差滚动** - 创建深度感和视觉吸引力
+4. **视频背景** - 增强视觉体验
 
-## Expanding the ESLint configuration
+## 🚀 安装和运行
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+   ```bash
+   pnpm i
+   pnpm dev
+   ```
+
+## 👁️ 预览
+
+> 欢迎参考下方演示效果，体验动画的实际表现
+
+### PC端演示
+
+![1](./diagram/1.gif)
+![2](./diagram/2.gif)
+![3](./diagram/3.gif)
+
+## 移动端演示
+
+![4](./diagram/4.gif)
